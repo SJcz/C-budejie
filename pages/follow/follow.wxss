@@ -1,0 +1,75 @@
+/* pages/follow/follow.wxss */
+.main-container{
+  font-size: 30rpx;
+  display: table;
+  width: 100%;
+}
+
+.left-container{
+  display: table-cell;
+  vertical-align: top;
+  width: 30%; /*切换分类时, 右边会没有数据,导致左边宽度变化, 所以才加上的*/
+}
+
+.category-item{
+  color: rgb(65, 62, 62);
+  background-color: #eee;
+  text-align: center;
+  padding: 25rpx;
+  margin-bottom: 5rpx;
+}
+
+.category-item.selected {
+  color: rgb(236, 65, 65);
+  border-left: 2px solid rgb(236, 65, 65);
+  font-size: 35rpx;
+}
+
+.right-container{
+  display: table-cell;
+}
+
+.user-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5rpx;
+  padding: 10rpx;
+}
+
+.user-avatar{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.user-info{
+  width: 50%;
+  padding: 10rpx;
+}
+
+.follow-btn{
+  width: 60px;
+  border-radius: 10rpx;
+  border: 1px solid #eee;
+  margin-top: 10%;
+  padding: 10rpx;
+  color: rgb(236, 65, 65);
+  text-align: center;
+}
+
+
+/*加载更多数据*/
+.load-more-data-view{
+  text-align: center;
+  padding: 10rpx;
+  background-color: #fff;
+  color: #000;
+  font-size: 30rpx;
+}
+
+.load-more-data-view image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: top;
+}
+

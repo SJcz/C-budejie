@@ -1,0 +1,44 @@
+/* pages/login/login.wxss */
+page{
+  background-color: #fff;
+}
+
+.main-container{
+  margin-top: 10%;
+  padding: 60rpx;
+}
+
+.logo-view {
+  text-align: center;
+  margin-bottom: 40rpx;
+
+}
+
+.logo-view image{
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.input-view {
+  position: relative;
+}
+
+.input-view input{
+  border-bottom: 1px solid #eee;
+  padding: 20rpx;
+}
+
+.btn-view{
+  margin-top: 40rpx;
+}
+
+.ver-btn{
+  border-radius: 30rpx;
+  border: 1px solid #DA4F49;
+  color: #DA4F49;
+  position:absolute;
+  bottom:10rpx;
+  right:20rpx;
+  font-size:26rpx;
+  z-index: 99; /*由于定位导致在input后面, 不然无法触发点击事件*/
+}

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/follow/follow",
+    "pages/my/my",
+    "pages/detail/detail",
+    "pages/login/login",
+    "pages/advice/advice"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#DA4F49",
+    "navigationBarTitleText": "忘忧段子",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#111",
+    "selectedColor": "#DA4F49",
+    "backgroundColor": "#d5d5d5",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "assets/xiaolian-selected.png",
+        "iconPath": "assets/xiaolian.png",
+        "text": "忘忧段子"
+      },
+      {
+        "pagePath": "pages/follow/follow",
+        "selectedIconPath": "assets/guanzhu-selected.png",
+        "iconPath": "assets/guanzhu.png",
+        "text": "关注"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "selectedIconPath": "assets/wode-selected.png",
+        "iconPath": "assets/wode.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

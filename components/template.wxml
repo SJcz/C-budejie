@@ -1,0 +1,135 @@
+<!-- 段子列表布局 -->
+<template name="BDJduanziCell">
+  <view class="tab-duanzi-cell" bindtap="switchTodetailPage" data-source="{{item}}">
+    <view>
+      <image src="{{item.profile_image}}" class="cell-profile-image"></image>
+      <view class="inline-block-view">
+        <view class="cell-user-name">{{item.name}}</view>
+        <view class="cell-create-at">{{item.created_at}}</view>
+      </view>
+    </view>
+    <view style="margin: 10rpx 0">
+      <text>{{item.text}}</text>
+    </view>
+    <view class="cell-jiaohu">
+      <template is="BDJjiaohuTemplate" data="{{item: item}}"/>
+    </view>
+  </view>
+</template>
+
+<!-- 图片列表布局 -->
+<template name="BDJtupianCell">
+  <view class="tab-tupian-cell" bindtap="switchTodetailPage" data-source="{{item}}">
+    <view>
+      <image src="{{item.profile_image}}" class="cell-profile-image"></image>
+      <view class="inline-block-view">
+        <view class="cell-user-name">{{item.name}}</view>
+        <view class="cell-create-at">{{item.created_at}}</view>
+      </view>
+    </view>
+    <view style="margin: 10rpx 0">
+      <text>{{item.text}}</text>
+    </view>
+    <view catch:tap="switchTodetailImagePage" data-src="{{item.cdn_img}}" style="position:relative">
+      <image src="{{item.cdn_img}}" mode="aspectFill" class="content-image"></image>
+      <view class="text-hover-image">点击查看全图</view>
+    </view>
+    <view class="cell-jiaohu">
+      <template is="BDJjiaohuTemplate" data="{{item: item}}"/>
+    </view>
+  </view>
+</template>
+
+<!-- 视频列表布局 -->
+<template name="BDJshipinCell">
+  <view class="tab-shipin-cell" bindtap="switchTodetailPage" data-source="{{item}}">
+    <view>
+      <image src="{{item.profile_image}}" class="cell-profile-image"></image>
+      <view class="inline-block-view">
+        <view class="cell-user-name">{{item.name}}</view>
+        <view class="cell-create-at">{{item.created_at}}</view>
+      </view>
+    </view>
+    <view style="margin: 10rpx 0">
+      <text>{{item.text}}</text>
+    </view>
+    <view catch:tap="playVideo" data-videoid="{{type + '-' + item.id}}" style="position:relative">
+      <video src="{{item.videouri}}" poster="{{item.cdn_img}}" wx:if="{{playingVideoId == (type + '-' + item.id)}}" 
+      id="{{type + '-' + item.id}}" controls></video>
+      <image src="{{item.cdn_img}}" wx:else class="cover-image" mode="aspectFill">
+        <image src="{{playIcon}}" class="play-icon-image"></image>
+        <view class="video-basic-info">
+          <view style="float:left">{{item.playcount}}播放</view>
+          <view style="float:right">{{item.videotime}}</view>
+        </view>
+      </image>
+    </view>
+    <view class="cell-jiaohu">
+      <template is="BDJjiaohuTemplate" data="{{item: item}}"/>
+    </view>
+  </view>
+</template>
+
+<!-- 声音列表布局 -->
+<template name="BDJshengyinCell">
+  <view class="tab-shengyin-cell" bindtap="switchTodetailPage" data-source="{{item}}">
+    <view>
+      <image src="{{item.profile_image}}" class="cell-profile-image"></image>
+      <view class="inline-block-view">
+        <view class="cell-user-name">{{item.name}}</view>
+        <view class="cell-create-at">{{item.created_at}}</view>
+      </view>
+    </view>
+    <view style="margin: 10rpx 0">
+      <text>{{item.text}}</text>
+    </view>
+    <!-- 视频组件播放音频 -->
+     <view catch:tap="playVideo" data-videoid="{{'audio-' + item.id}}" style="position:relative">
+      <video src="{{item.voiceuri}}" poster="{{item.cdn_img}}" wx:if="{{playingVideoId == 'audio-' + item.id}}" 
+      id="{{'audio-' + item.id}}" controls></video>
+      <image src="{{item.bimageuri}}" wx:else class="cover-image" mode="aspectFill">
+        <image src="{{playIcon}}" class="play-icon-image"></image>
+      </image>
+    </view>
+
+    <view class="cell-jiaohu">
+      <template is="BDJjiaohuTemplate" data="{{item: item}}"/>
+    </view>
+  </view>
+</template>
+
+<!-- 点赞/评论/转发 div-->
+<template name="BDJjiaohuTemplate">
+  <view>
+    <image class="cell-icon" src="http://120.78.124.36/wxxcx/C_BDJ/dianzan.png"></image>
+    <text>{{item.love}}</text>
+  </view>
+  <view>
+    <image class="cell-icon" src="http://120.78.124.36/wxxcx/C_BDJ/budianzan.png"></image>
+    <text>{{item.hate}}</text>
+  </view>
+  <view bindtap="switchToDetailCommentPage" data-item="{{item}}">
+    <image class="cell-icon" src="http://120.78.124.36/wxxcx/C_BDJ/comment.png"></image>
+    <text>{{item.comment}}</text>
+  </view>
+  <view>
+    <image class="cell-icon" src="http://120.78.124.36/wxxcx/C_BDJ/zhuanfa.png"></image>
+    <text>{{item.repost}}</text>
+  </view>
+</template>
+
+<!-- 评论列表cell-->
+<template name="BDJcommentCell">
+  <view class="comment-cell">
+    <view>
+      <image src="{{comment.user.profile_image}}" class="cell-profile-image"></image>
+      <view class="inline-block-view">
+        <view class="cell-user-name">{{comment.user.username}}</view>
+        <view class="cell-create-at">{{comment.ctime}}</view>
+      </view>
+    </view>
+    <view style="padding-left:105rpx">
+      <text>{{comment.content}}</text>
+    </view>
+  </view>
+</template>

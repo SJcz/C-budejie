@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<import src="../../components/template.wxml" />
+
+<view>
+  <scroll-view class="top-scroller-view" scroll-x="true" style="width:100%; height:{{topScrollViewHeight}}px" scroll-into-view="title-{{selectedTitleIndex}}" scroll-with-animation>
+    <view wx:for="{{titleList}}" wx:for-item="title" wx:for-index="index" class="title-item {{selectedTitleIndex == index ? 'selected' : ''}}" bindtap="changeTopTab" data-index="{{index}}" id="title-{{index}}">
+      {{title}}
+    </view>
+  </scroll-view>
+  <swiper class="content-swiper" current="{{selectedTitleIndex}}" bindchange="swiperContent" style="height: {{swiperHeight}}px">
+    <swiper-item class="swiper-item" wx:for="{{titleList}}" wx:for-index="index">
+      <scroll-view class="content-scroller-view" scroll-y style="height: 100%" bindscrolltolower="lowerMoreData">
+        <view wx:if="{{index == 0}}">
+          <view wx:for="{{quanbuDataList}}" wx:for-item="quanbu">
+          <!--
+            <view wx:if="{{quanbu.type == 41}}">
+              <template is="BDJshipinCell" 
+              data="{{item: quanbu, playingVideoId: playingVideoId, playIcon: playIcon, type: 'quanbu'}}" />
+            </view>
+            -->
+            <view wx:if="{{quanbu.type == 10}}">
+              <template is="BDJtupianCell" data="{{item: quanbu}}" />
+            </view>
+            <view wx:if="{{quanbu.type == 29}}">
+              <template is="BDJduanziCell" data="{{item: quanbu}}" />
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{index == 1}}">
+          <template is="BDJtupianCell" wx:for="{{tupianDataList}}" wx:for-item="tupian" data="{{item: tupian}}"></template>
+        </view>
+        <view wx:if="{{index == 2}}">
+          <template is="BDJduanziCell" wx:for="{{duanziDataList}}" wx:for-item="duanzi" data="{{item: duanzi}}"></template>
+        </view>
+        <!--
+        <view wx:if="{{index == 3}}">
+          <template is="BDJshipinCell" wx:for="{{shipinDataList}}" wx:for-item="shipin" 
+          data="{{item: shipin,playingVideoId: playingVideoId, playIcon: playIcon, type: 'shipin'}}"></template>
+        </view>
+        <view wx:if="{{index == 4}}">
+          <template is="BDJshengyinCell" wx:for="{{shengyinDataList}}" wx:for-item="shengyin" 
+          data="{{item: shengyin, playingVideoId:playingVideoId, playIcon: playIcon}}"></template>
+        </view>
+        -->
+         <view wx:if="{{index == 3 || index == 4}}" style="text-align: center">
+            暂未开放
+         </view>
+        <view wx:else class="load-more-data-view">
+            <image src="{{loadingIcon}}"></image>
+            正在加载数据
+          </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+</view>

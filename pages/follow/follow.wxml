@@ -1,0 +1,25 @@
+<!--pages/follow/follow.wxml-->
+<view class="main-container">
+  <view class="left-container">
+    <view class="category-item {{index == selectedCategoryIndex ? 'selected' : ''}}" 
+    wx:for="{{categoryList}}" bindtap="changeSelectedCategory" data-categoryindex="{{index}}">{{item.name}}</view>
+  </view>
+  <view class="right-container">
+    <scroll-view scroll-y style="height: {{scrollViewHeight}}px" bindscrolltolower="lowerMoreData" class="user-list-scroll-view">
+    <view class="user-item" wx:for="{{userList}}">
+      <image src="{{item.header}}" class="user-avatar" ></image>
+      <view class="user-info">
+        <view>{{item.screen_name}}</view>
+        <view>{{item.fans_count}}关注</view>
+      </view>
+      <view>
+        <view  bindtap="followUser" class="follow-btn" size="mini"> + 关注 </view>
+      </view>
+    </view>
+    <view class="load-more-data-view " wx:if="{{showLoadingTip}}">
+            <image src="{{loadingIcon}}" ></image>
+            正在加载数据
+    </view>
+    </scroll-view>
+  </view>
+</view>

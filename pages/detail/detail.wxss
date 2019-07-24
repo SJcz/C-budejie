@@ -1,0 +1,122 @@
+/* pages/detail/detail.wxss */
+/*每一个段子cell*/ 
+.tab-duanzi-cell{
+  border-bottom: 1px solid #eee;
+  padding:20rpx;
+}
+/*每一个图片cell*/ 
+.tab-tupian-cell {
+  border-bottom: 1px solid #eee;
+  padding:20rpx;
+}
+.tab-tupian-cell .content-image{
+  width: 100%;
+}
+
+/*每一个视频cell*/ 
+.tab-shipin-cell {
+  border-bottom: 1px solid #eee;
+  padding:20rpx;
+}
+.tab-shipin-cell video{
+  width: 100%;
+}
+
+/*视频播放按钮*/
+.tab-shipin-cell .play-icon-image{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  height: 80rpx;
+  width: 80rpx;
+  margin-left: -40rpx;
+}
+/*视频基本信息*/
+.tab-shipin-cell .video-basic-info{
+  position: absolute;
+  padding: 10rpx;
+  left: 0;
+  right: 0;
+  background: linear-gradient(#fff, rgb(202, 199, 199));
+  color: #fff;
+  bottom: 0;
+  font-size: 28rpx;
+}
+
+/*每一个声音cell*/ 
+.tab-shengyin-cell {
+  border-bottom: 1px solid #eee;
+  padding:20rpx;
+}
+.tab-shengyin-cell audio{
+  width: 100%;
+}
+
+/*用户头像*/  
+.cell-profile-image{
+  height:80rpx;
+  width:80rpx;
+  border-radius:40rpx
+}
+
+.comment-cell{
+  border-bottom:1px solid #eee;
+  padding:20rpx;
+}
+
+/*用户名字*/  
+.cell-user-name {
+  font-size:25rpx;
+  color:rgb(18, 155, 160);
+  margin-bottom: 15rpx;
+}
+
+/*用户发布时间*/  
+.cell-create-at {
+  font-size:25rpx;
+  color:rgb(155, 173, 173);
+}
+
+/*点击查看全图   样式*/
+.text-hover-image{
+  position: absolute;
+  bottom: 4px; /*我也不知道为什么图片的高度和父view的高度不一致，不然就设置0了*/
+  text-align: center;
+  left: 0;
+  right: 0;
+  padding: 8rpx;
+  background-color: #444343;
+  opacity: 0.8;
+  color: #fff;
+}
+
+/* 点赞/转发所在的div*/
+.cell-jiaohu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* 图标和文字位置要对齐*/
+.cell-icon {
+  width:40rpx;
+  height:40rpx;
+  font-size: 40rpx;
+  display: inline-block;
+  vertical-align:middle;
+}
+
+.cell-jiaohu text {
+  display: inline-block;
+  vertical-align:middle;
+  padding:15rpx;
+  font-size:30rpx;
+  color: #8a8a8a;
+}
+
+/*view 变成 inline-block*/
+.inline-block-view {
+  display:inline-block;
+  vertical-align: top;
+  margin-left: 25rpx;
+}

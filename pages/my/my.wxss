@@ -1,0 +1,50 @@
+/* pages/my/my.wxss */
+page{
+  background-color: #eee;
+}
+
+.top-container {
+  background-color: #DA4F49;
+}
+
+.user-info{
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.user-avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+ 
+}
+
+.user-name {
+  color: #fff;
+  line-height: 150rpx;
+   font-size: 40rpx;
+   margin-left: 40rpx;
+}
+
+.operation-list-item{
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.operation-list-item image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.middle-font{
+  width: 100%;
+  margin-left: 20rpx;
+  
+}
+

@@ -1,0 +1,24 @@
+<!--pages/detail/detail.wxml-->
+<!--pages/detail/detail.wxml-->
+<import src="../../components/template.wxml"/>
+
+<view wx:if="{{cell_datasource.type == 10}}">
+  <template is="BDJtupianCell" data="{{item: cell_datasource}}"/>
+</view>
+<view wx:elif="{{cell_datasource.type == 29}}"> 
+  <template is="BDJduanziCell" data="{{item: cell_datasource}}"/>
+</view>
+<view wx:elif="{{cell_datasource.type == 41}}"> 
+  <template is="BDJshipinCell" 
+  data="{{item: cell_datasource, playingVideoId: playingVideoId, playIcon: playIcon, type: 'shipin'}}"/>
+</view>
+<view wx:elif="{{cell_datasource.type == 31}}"> 
+  <template is="BDJshengyinCell" data="{{item: cell_datasource}}"/>
+</view>
+
+<view>
+  <view style="padding: 20rpx; margin-bottom: 30rpx;font-size:30rpx;color:#a1a1a1;">评论列表</view>
+  <view wx:for="{{commentList}}" we:for-index='index' wx:for-item='comment'>
+    <template is="BDJcommentCell" data="{{comment: comment}}"/>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="main-container">
+  <view class="logo-view">
+    <image src="{{logoIcon}}" mode="aspectFill"></image>
+  </view>
+  <view class="input-view">
+    <input placeholder='请输入手机号' type="number" maxlength="11" value="{{mobileNumber}}" bindinput="changeMN"></input>
+    <input placeholder='请输入验证码' type="number" maxlength="6" value="{{verCode}}" bindinput="changeVerCode"></input>
+    <button class="ver-btn " disabled="{{disableGetVer}}" bindtap="getVerCode" style="width:95px">{{btnValue}}</button>
+  </view>
+  <view class="btn-view">
+    <button type="warn" disabled="{{disableLoginBtn}}" bindtap="login">登陆</button>
+  </view>
+</view>
