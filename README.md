@@ -42,3 +42,6 @@ page : 当前页码 ,请求第一页数据的时候可不填
 
 #### 效果
 <image src="/picture/GIF.gif" width="300"/>
+
+#### 小程序码
+<image src="/picture/code.jpg" width="300"/>
